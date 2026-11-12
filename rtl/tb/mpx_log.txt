@@ -1,0 +1,44 @@
+TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 15:01:56 -03
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+Recompiling... reason: file './source/mpx.v' is newer than expected.
+	expected: Thu Nov 12 14:59:57 2026
+	actual:   Thu Nov 12 15:01:54 2026
+file: source/mpx.v
+	module worklib.mpx:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_mpx
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.mpx:v <0x5dd257c5>
+			streams:   1, words:   208
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               5       5
+		Scalar wires:            1       -
+		Vectored wires:          3       -
+		Initial blocks:          1       1
+		Cont. assignments:       1       1
+		Pseudo assignments:      3       -
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_mpx:v
+Loading snapshot worklib.tb_mpx:v .................... Done
+xcelium> source /tools/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+
+
+
+Testbench encerrado!
+Quantidade de erros ocorridos:          0
+
+
+
+Simulation complete via $finish(1) at time 6553650 NS + 0
+./tb/tb_mpx.v:52         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 15:01:57 -03  (total: 00:00:01)
