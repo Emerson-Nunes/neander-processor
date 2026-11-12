@@ -1,10 +1,7 @@
-TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 13:41:26 -03
+TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 16:22:44 -03
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
 file: source/ri_reg.v
 	module worklib.ri_reg:v
-		errors: 0, warnings: 0
-file: tb/tb_ri_reg.v
-	module worklib.tb_ri_reg:v
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -12,10 +9,8 @@ file: tb/tb_ri_reg.v
 		tb_ri_reg
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.ri_reg:v <0x7afba8b6>
-			streams:   2, words:   556
-		worklib.tb_ri_reg:v <0x519ba3ed>
-			streams:   8, words:  5826
+		worklib.ri_reg:v <0x68cc26e7>
+			streams:   2, words:   527
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -1062,4 +1057,4 @@ xcelium> run
 Simulation complete via $finish(1) at time 51300 NS + 0
 ./tb/tb_ri_reg.v:36         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 13:41:26 -03  (total: 00:00:00)
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 16:22:44 -03  (total: 00:00:00)

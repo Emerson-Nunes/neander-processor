@@ -10,12 +10,11 @@ module nz_reg (
 
     //Como é um registrador, então montei com lógica sequencial
     always @(posedge clk) begin
-        //Por padrão as flags de saídas recebem 0, para evitar criação de latch
-        n_out <= 1'b0;
-        z_out <= 1'b1;
         //Condição de maior prioridade(acionar o reset), em seguida load
         if (rst)       begin n_out <= 1'b0; z_out <= 1'b1; end
         else if (load) begin n_out <= n_in; z_out <= z_in; end
+        //Por padrão a saída recebe o último valor
+        else           begin n_out <= n_out; z_out <= z_out; end
     end
 
 endmodule

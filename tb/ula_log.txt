@@ -1,0 +1,5 @@
+TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 16:20:45 -03
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+xrun: *E,FILEMIS: Cannot find the provided file source/ula.v.
+xrun: *E,FILEMIS: Cannot find the provided file tb/tb_ula.v.
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 16:20:45 -03  (total: 00:00:00)

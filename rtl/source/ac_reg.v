@@ -10,11 +10,12 @@ module ac_reg #(
 
     //Como é um registrador, então montei com lógica sequencial
     always @(posedge clk) begin
-        //Por padrão a saída recebe 0, para evitar criação de latch
-        data_out <= 0;
+        //Por padrão a saída recebe o último valor
         //Condição de maior prioridade(acionar o reset), em seguida load
         if (rst)       data_out <= {WIDTH_DATA{1'b0}};
         else if (load) data_out <= data_in;
+        //Por padrão a saída recebe o último valor
+        else           data_out <= data_out;
     end
 
 endmodule

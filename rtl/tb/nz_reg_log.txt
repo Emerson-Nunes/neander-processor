@@ -1,4 +1,4 @@
-TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 14:50:29 -03
+TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 16:25:07 -03
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
 file: source/nz_reg.v
 	module worklib.nz_reg:v
@@ -10,7 +10,7 @@ file: source/nz_reg.v
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
 		worklib.nz_reg:v <0x109b8c55>
-			streams:   4, words:  1387
+			streams:   4, words:  1528
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -48,4 +48,4 @@ xcelium> run
 Simulation complete via $finish(1) at time 900 NS + 0
 ./tb/tb_nz_reg.v:36         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 14:50:30 -03  (total: 00:00:01)
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 16:25:07 -03  (total: 00:00:00)

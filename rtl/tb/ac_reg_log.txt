@@ -1,10 +1,7 @@
-TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 12:25:04 -03
+TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 16:26:08 -03
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-Recompiling... reason: file './tb/tb_ac_reg.v' is newer than expected.
-	expected: Thu Nov 12 12:23:45 2026
-	actual:   Thu Nov 12 12:25:02 2026
-file: tb/tb_ac_reg.v
-	module worklib.tb_ac_reg:v
+file: source/ac_reg.v
+	module worklib.ac_reg:v
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -12,8 +9,8 @@ file: tb/tb_ac_reg.v
 		tb_ac_reg
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.tb_ac_reg:v <0x687f25ec>
-			streams:   8, words:  5826
+		worklib.ac_reg:v <0x10c5b26d>
+			streams:   2, words:   527
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -1060,4 +1057,4 @@ xcelium> run
 Simulation complete via $finish(1) at time 51300 NS + 0
 ./tb/tb_ac_reg.v:36         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 12:25:05 -03  (total: 00:00:01)
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 16:26:08 -03  (total: 00:00:00)

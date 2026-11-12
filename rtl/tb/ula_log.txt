@@ -1,8 +1,8 @@
-TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 15:52:51 -03
+TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 16:21:04 -03
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
 Recompiling... reason: file './tb/tb_ula.v' is newer than expected.
-	expected: Thu Nov 12 15:52:37 2026
-	actual:   Thu Nov 12 15:52:49 2026
+	expected: Thu Nov 12 15:52:49 2026
+	actual:   Thu Nov 12 15:54:10 2026
 file: tb/tb_ula.v
 	module worklib.tb_ula:v
 		errors: 0, warnings: 0
@@ -40,6 +40,6 @@ Quantidade de erros ocorridos:          0
 
 
 Simulation complete via $finish(1) at time 26214450 NS + 0
-./tb/tb_ula.v:73         $finish;
+./tb/tb_ula.v:75         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 15:52:51 -03  (total: 00:00:00)
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 16:21:05 -03  (total: 00:00:01)

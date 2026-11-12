@@ -1,10 +1,7 @@
-TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 12:26:42 -03
+TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 16:24:22 -03
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
 file: source/pc_reg.v
 	module worklib.pc_reg:v
-		errors: 0, warnings: 0
-file: tb/tb_pc_reg.v
-	module worklib.tb_pc_reg:v
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -12,10 +9,8 @@ file: tb/tb_pc_reg.v
 		tb_pc_reg
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.pc_reg:v <0x6e875256>
-			streams:   2, words:   694
-		worklib.tb_pc_reg:v <0x675c0cbe>
-			streams:   9, words:  6522
+		worklib.pc_reg:v <0x0282a955>
+			streams:   2, words:   663
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -1110,7 +1105,7 @@ xcelium> run
 | clk: 0 | rst: 0 | inc: 0 | load: 1 | data_in:  24 | data_out:  23
 | clk: 1 | rst: 0 | inc: 0 | load: 1 | data_in:  24 | data_out:  24
 | clk: 0 | rst: 0 | inc: 0 | load: 1 | data_in:  25 | data_out:  24
-| clk: 1 | rst: 0 | inc: 0 | load: 1 |  data_in:  25 | data_out:  25
+| clk: 1 | rst: 0 | inc: 0 | load: 1 | data_in:  25 | data_out:  25
 | clk: 0 | rst: 0 | inc: 0 | load: 1 | data_in:  26 | data_out:  25
 | clk: 1 | rst: 0 | inc: 0 | load: 1 | data_in:  26 | data_out:  26
 | clk: 0 | rst: 0 | inc: 0 | load: 1 | data_in:  27 | data_out:  26
@@ -2086,4 +2081,4 @@ xcelium> run
 Simulation complete via $finish(1) at time 102500 NS + 0
 ./tb/tb_pc_reg.v:37         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 12:26:43 -03  (total: 00:00:01)
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 16:24:23 -03  (total: 00:00:01)

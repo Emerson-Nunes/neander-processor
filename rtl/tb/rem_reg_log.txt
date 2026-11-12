@@ -1,4 +1,4 @@
-TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 12:25:21 -03
+TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 16:23:59 -03
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
 file: tb/tb_rem_reg.v
 	module worklib.tb_rem_reg:v
@@ -9,6 +9,8 @@ file: tb/tb_rem_reg.v
 		tb_rem_reg
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
+		worklib.rem_reg:v <0x77f71aed>
+			streams:   2, words:   527
 		worklib.tb_rem_reg:v <0x2a48b544>
 			streams:   8, words:  5826
 	Building instance specific data structures.
@@ -1057,4 +1059,4 @@ xcelium> run
 Simulation complete via $finish(1) at time 51300 NS + 0
 ./tb/tb_rem_reg.v:36         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 12:25:21 -03  (total: 00:00:00)
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 16:23:59 -03  (total: 00:00:00)
