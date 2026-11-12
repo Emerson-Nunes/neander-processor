@@ -67,6 +67,32 @@ module tb_decode;
             end
         end
 
+        for(i = 0; i < (50); i = i + 1) begin
+            opcode = $urandom_range(0, 15);
+            ocorreu_erro = 0;
+            #5;
+            case (opcode)
+                NOP:     ocorreu_erro = (nop != 1'b1);
+                STA:     ocorreu_erro = (sta != 1'b1);
+                LDA:     ocorreu_erro = (lda != 1'b1);
+                ADD:     ocorreu_erro = (add != 1'b1);
+                OR :     ocorreu_erro = (orr != 1'b1);
+                AND:     ocorreu_erro = (andd != 1'b1);
+                NOT:     ocorreu_erro = (nott != 1'b1);
+                SUB:     ocorreu_erro = (sub != 1'b1);
+                JMP:     ocorreu_erro = (jmp != 1'b1);
+                JN :     ocorreu_erro = (jn != 1'b1);
+                JZ :     ocorreu_erro = (jz != 1'b1);
+                HLT:     ocorreu_erro = (hlt != 1'b1);
+                default: ocorreu_erro = (nop != 1'b1);
+            endcase
+
+            if (ocorreu_erro) begin
+                $display("\n\n\nERRO: | opcode: %b |", opcode);
+                erros = erros + 1;
+            end
+        end
+
         $display("Tesbench finalizado, quantidade de erros: %d\n\n\n", erros);
 
         $finish;

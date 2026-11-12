@@ -1,8 +1,8 @@
-TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 17:33:01 -03
+TOOL:	xrun(64)	24.09-s001: Started on Nov 12, 2026 at 17:40:40 -03
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
 Recompiling... reason: file './tb/tb_decod.v' is newer than expected.
-	expected: Thu Nov 12 17:32:48 2026
-	actual:   Thu Nov 12 17:32:59 2026
+	expected: Thu Nov 12 17:40:26 2026
+	actual:   Thu Nov 12 17:40:38 2026
 file: tb/tb_decod.v
 	module worklib.tb_decode:v
 		errors: 0, warnings: 0
@@ -12,8 +12,8 @@ file: tb/tb_decod.v
 		tb_decode
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.tb_decode:v <0x64c0a0ab>
-			streams:   2, words:  3322
+		worklib.tb_decode:v <0x282184d2>
+			streams:   2, words:  6014
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -28,13 +28,14 @@ file: tb/tb_decod.v
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.tb_decode:v
 Loading snapshot worklib.tb_decode:v .................... Done
+SVSEED default: 1
 xcelium> source /tools/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
 Tesbench finalizado, quantidade de erros:           0
 
 
 
-Simulation complete via $finish(1) at time 800 NS + 0
-./tb/tb_decod.v:72         $finish;
+Simulation complete via $finish(1) at time 3300 NS + 0
+./tb/tb_decod.v:98         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 17:33:01 -03  (total: 00:00:00)
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 12, 2026 at 17:40:40 -03  (total: 00:00:00)
