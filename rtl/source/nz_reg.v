@@ -9,7 +9,7 @@ module nz_reg (
     );
 
     //Como é um registrador, então montei com lógica sequencial
-    always @(posedge clk) begin
+    always @(posedge clk or posedge rst) begin
         //Condição de maior prioridade(acionar o reset), em seguida load
         if (rst)       begin n_out <= 1'b0; z_out <= 1'b1; end
         else if (load) begin n_out <= n_in; z_out <= z_in; end

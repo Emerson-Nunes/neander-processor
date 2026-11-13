@@ -10,7 +10,7 @@ module pc_reg #(
     );
 
     //Como é um registrador, então montei com lógica sequencial
-    always @(posedge clk) begin
+    always @(posedge clk or posedge rst) begin
         //Condição de maior prioridade(acionar o reset), em seguida load e incremento no endereço
         if (rst)       data_out <= {WIDTH_DATA{1'b0}};
         else if (load) data_out <= data_in;

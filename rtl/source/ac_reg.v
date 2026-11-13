@@ -9,7 +9,7 @@ module ac_reg #(
     );
 
     //Como é um registrador, então montei com lógica sequencial
-    always @(posedge clk) begin
+    always @(posedge clk or posedge rst) begin
         //Por padrão a saída recebe o último valor
         //Condição de maior prioridade(acionar o reset), em seguida load
         if (rst)       data_out <= {WIDTH_DATA{1'b0}};
