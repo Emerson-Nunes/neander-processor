@@ -2,7 +2,7 @@
 
 Implementação em Verilog do processador didático **Neander** (8 bits, acumulador), feita módulo a módulo, cada um com seu testbench, e simulada com o **Cadence Xcelium (`xrun`)**.
 
-> **Estado atual:** projeto em andamento. O datapath (registradores, MUX e ULA) está implementado e testado. A **unidade de controle, o decodificador e a memória ainda estão vazios**, e as pastas `asm/`, `mem/`, `scrips/`, `tb/` e `tools/` na raiz ainda não têm conteúdo.
+> **Estado atual:** projeto em andamento. O datapath (registradores, MUX e ULA), unidade de controle, decodificador estão implementados e testados. O módulo de memória ainda está em desenvolvimento**, e as pastas `asm/`, `mem/`, `scrips/`, `tb/` e `tools/` na raiz ainda estão em desenvolvimento.
 
 ## Sobre o Neander
 
@@ -12,7 +12,7 @@ Arquitetura simples usada no ensino de organização de computadores:
 - Um único registrador visível ao programador, o acumulador (AC).
 - Duas flags de condição: **N** (negativo) e **Z** (zero).
 - Contador de programa (PC) de 8 bits.
-- Conjunto de instruções clássico: `NOP, STA, LDA, ADD, OR, AND, NOT, JMP, JN, JZ, HLT`.
+- Conjunto de instruções clássico, adicionada a instrução `SUB`: `NOP, STA, LDA, ADD, OR, AND, NOT, JMP, JN, JZ, HLT`.
 
 ## Estrutura de diretórios
 
@@ -38,7 +38,7 @@ O desenvolvimento segue a abordagem **bottom-up**: construir e validar cada bloc
 2. **Módulos parametrizados**: largura de dados em `WIDTH_DATA` (padrão 8) e de seleção da ULA em `WIDTH_SEL` (padrão 3).
 3. **Testbench por módulo**: cada módulo em `rtl/source/` tem um `tb_<modulo>.v` em `rtl/tb/`, com saída registrada em `<modulo>_log.txt`.
 4. **Simulação com `xrun`**: compila, elabora e simula; os artefatos gerados (`xcelium.d/`, `xrun.log`, `xrun.history`) são ignorados pelo Git.
-5. **Integração (pendente)**: `mem`, `decod`, `unidade_controle` e o módulo de topo que conecta tudo.
+5. **Integração (pendente)**: `mem`, módulo de topo que conecta tudo.
 
 ### Ordem seguida (conforme os arquivos existentes)
 
