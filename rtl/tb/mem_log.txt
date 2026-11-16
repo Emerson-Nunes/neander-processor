@@ -1,0 +1,48 @@
+TOOL:	xrun(64)	24.09-s001: Started on Nov 16, 2026 at 18:29:25 -03
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+Recompiling... reason: file './source/mem.v' is newer than expected.
+	expected: Mon Nov 16 18:27:36 2026
+	actual:   Mon Nov 16 18:28:55 2026
+file: source/mem.v
+	module worklib.mem:v
+		errors: 0, warnings: 0
+file: tb/tb_mem.v
+	module worklib.tb_mem:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_mem
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.mem:v <0x6b1e6fbc>
+			streams:   4, words:  1519
+		worklib.tb_mem:v <0x6835609c>
+			streams:   8, words: 11022
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               8       8
+		Scalar wires:            3       -
+		Vectored wires:          3       -
+		Always blocks:           1       1
+		Initial blocks:          4       4
+		Pseudo assignments:      5       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_mem:v
+Loading snapshot worklib.tb_mem:v .................... Done
+xcelium> source /tools/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+leu end 0   : dout=20 (esperado 20)
+leu end 3   : dout=f0 (esperado F0)
+escreveu 55 : dout=f0 (esperado F0, valor antigo)
+leu end 3   : dout=55 (esperado 55)
+sem rd/wr   : dout=55 (esperado 55, parado)
+Total: 0 erro(s)
+Simulation complete via $finish(1) at time 600 NS + 0
+./tb/tb_mem.v:66         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 16, 2026 at 18:29:26 -03  (total: 00:00:01)
