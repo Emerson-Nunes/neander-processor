@@ -1,0 +1,54 @@
+TOOL:	xrun(64)	24.09-s001: Started on Nov 16, 2026 at 17:24:31 -03
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+Recompiling... reason: file './source/unidade_controle.v' is newer than expected.
+	expected: Mon Nov 16 17:18:46 2026
+	actual:   Mon Nov 16 17:24:18 2026
+file: source/unidade_controle.v
+	module worklib.unidade_controle:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb_unidade_controle
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.unidade_controle:v <0x72b55b64>
+			streams:   5, words:  7239
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              45      45
+		Scalar wires:           40       -
+		Vectored wires:          2       -
+		Always blocks:           3       3
+		Initial blocks:          2       2
+		Cont. assignments:       1      13
+		Pseudo assignments:     16       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_unidade_controle:v
+Loading snapshot worklib.tb_unidade_controle:v .................... Done
+xcelium> source /tools/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+  NOP     : OK
+  STA     : OK
+  LDA     : OK
+  ADD     : OK
+  OR      : OK
+  AND     : OK
+  NOT     : OK
+  SUB     : OK
+  JMP     : OK
+  JN N=1  : OK
+  JN N=0  : OK
+  JZ Z=1  : OK
+  JZ Z=0  : OK
+  HLT     : OK
+  LIVRE   : OK
+Total: 0 erro(s)
+Simulation complete via $finish(1) at time 25700 NS + 0
+./tb/tb_unidade_controle.v:173         $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 16, 2026 at 17:24:32 -03  (total: 00:00:01)
