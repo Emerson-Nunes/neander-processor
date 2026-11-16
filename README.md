@@ -49,10 +49,10 @@ O desenvolvimento segue a abordagem **bottom-up**: construir e validar cada bloc
 | 3 | `nz_reg` (flags N e Z) | ✅ implementado e com testbench |
 | 4 | `mpx` (seleciona PC ou RDM para o REM) | ✅ implementado e com testbench |
 | 5 | `ula` | ✅ implementado e com testbench exaustivo |
-| 6 | `decod` (decodificador de instruções) | | ✅ implementado e com testbench |
-| 7 | `mem` (memória 256x8) | ⏳ arquivo vazio |
-| 8 | `unidade_controle` (FSM de busca/decodificação/execução) | | ✅ implementado e com testbench |
-| 9 | Módulo de topo + testbench de sistema + programas `.asm` | ⏳ não iniciado |
+| 6 | `decod` (decodificador de instruções) | ✅ implementado e com testbench |
+| 7 | `mem` (memória 256x8) | ⏳ em produção |
+| 8 | `unidade_controle` (FSM de busca/decodificação/execução) | ✅ implementado e com testbench |
+| 9 | Módulo de topo + testbench de sistema + programas `.asm` | ⏳ em produção |
 
 ## Módulos (`rtl/source/`)
 
