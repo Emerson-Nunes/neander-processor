@@ -16,6 +16,8 @@ module decode #(
         output reg                hlt
     );
 
+    // Ferramenta para enumeração e ficar mais legível
+    // cada OPCODE
     localparam [WIDTH_OP-1:0] NOP = 4'b0000,
                               STA = 4'b0001,
                               LDA = 4'b0010,
@@ -29,6 +31,10 @@ module decode #(
                               JZ  = 4'b1010,
                               HLT = 4'b1011;
 
+    // Decodificação do bit de saída
+    // de cada instrução, de forma combinacional
+    // Por padrão os OPCODE não listados
+    // são considerados como NOP
     always @(*) begin
         nop  = 1'b0;
         sta  = 1'b0;
