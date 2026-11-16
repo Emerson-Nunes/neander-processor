@@ -118,8 +118,7 @@ module unidade_controle #(
         end
 
         // Seleção da operação da ULA
-        // Está de acordo com a
-        // instrução atual
+        // de acordo com a instrução atual
         if (lda)  sel_ula = 3'b000;
         if (add)  sel_ula = 3'b001;
         if (orr)  sel_ula = 3'b010;

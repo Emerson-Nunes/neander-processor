@@ -39,7 +39,7 @@ module tb_unidade_controle;
     localparam       CHECA_ULA = 1;
     localparam       ATE_T     = 7;
 
-    // Um nome para cada botão
+    // codificação OneHot para cada OPCODE
     localparam [9:0] REM = 10'b1000000000, SEL = 10'b0100000000,
                      INC = 10'b0010000000, RI  = 10'b0001000000,
                      RDM = 10'b0000100000, RD  = 10'b0000010000,
@@ -51,11 +51,11 @@ module tb_unidade_controle;
                K_STA  = 1,
                K_ULA  = 2,   // LDA, ADD, OR, AND, SUB
                K_NOT  = 3,
-               K_DESV = 4,   // desvio tomado
-               K_NAOD = 5,   // desvio não tomado
+               K_DESV = 4,   // desvio
+               K_NAOD = 5,   // não desvio
                K_HLT  = 6;
 
-    // Botões que devem estar ligados em cada passo (tabelas do livro)
+    // Código que devem estar setado em cada passo
     function [9:0] esp(input integer tipo, input integer t);
         begin
             esp = 10'b0;
@@ -95,7 +95,7 @@ module tb_unidade_controle;
     reg ativo, halt_esp;
     reg [9:0] esperado, obtido;
 
-    // A cada subida do relógio compara o que saiu com o que o livro manda
+    // Compara o valor esperado e o valor lido a cada subida do clock
     always @(posedge clk) begin
         if (!rst && ativo) begin
             t_esp    = (tipo == K_HLT) ? ((ciclo < 3) ? ciclo : 3) : (ciclo % len);
@@ -157,7 +157,6 @@ module tb_unidade_controle;
                 14: begin caso = "LIVRE  "; tipo = K_NADA; len = 4; ula_esp = 0; end
             endcase
 
-            // reseta, roda umas duas voltas da instrução e diz se passou
             erros_caso = 0; ciclo = 0;
             rst = 1; #10; rst = 0;
             ativo = 1;

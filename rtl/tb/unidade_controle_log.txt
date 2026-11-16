@@ -1,10 +1,10 @@
-TOOL:	xrun(64)	24.09-s001: Started on Nov 16, 2026 at 17:24:31 -03
+TOOL:	xrun(64)	24.09-s001: Started on Nov 16, 2026 at 17:44:37 -03
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-Recompiling... reason: file './source/unidade_controle.v' is newer than expected.
-	expected: Mon Nov 16 17:18:46 2026
-	actual:   Mon Nov 16 17:24:18 2026
-file: source/unidade_controle.v
-	module worklib.unidade_controle:v
+Recompiling... reason: file './tb/tb_unidade_controle.v' is newer than expected.
+	expected: Mon Nov 16 17:17:50 2026
+	actual:   Mon Nov 16 17:44:29 2026
+file: tb/tb_unidade_controle.v
+	module worklib.tb_unidade_controle:v
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -12,8 +12,8 @@ file: source/unidade_controle.v
 		tb_unidade_controle
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.unidade_controle:v <0x72b55b64>
-			streams:   5, words:  7239
+		worklib.tb_unidade_controle:v <0x6d4fddd5>
+			streams:  20, words: 31723
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -49,6 +49,6 @@ xcelium> run
   LIVRE   : OK
 Total: 0 erro(s)
 Simulation complete via $finish(1) at time 25700 NS + 0
-./tb/tb_unidade_controle.v:173         $finish;
+./tb/tb_unidade_controle.v:172         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Nov 16, 2026 at 17:24:32 -03  (total: 00:00:01)
+TOOL:	xrun(64)	24.09-s001: Exiting on Nov 16, 2026 at 17:44:39 -03  (total: 00:00:02)
