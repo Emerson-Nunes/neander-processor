@@ -5,8 +5,8 @@ module neander_cpu #(
         parameter WIDTH_TIME = 3,
         parameter WIDTH_OP   = 4
     ) (
-        input wire clk,
-        input wire rst,
+        input wire                   clk,
+        input wire                   rst,
 
         output wire                  mem_rd,
         output wire                  mem_wr,
