@@ -13,12 +13,12 @@ module ula #(
     // Também fiz este em lógica combinacional
     // Comecei criando parâmetros locais com
     // os OPCODE de cada operação
-    localparam [WIDTH_SEL-1:0] LDA = 3'b010,
-                               ADD = 3'b011,
-                               OR  = 3'b100,
-                               AND = 3'b101,
-                               NOT = 3'b110,
-                               SUB = 3'b111;
+    localparam [WIDTH_SEL-1:0] LDA = 3'b000,
+                               ADD = 3'b001,
+                               OR  = 3'b010,
+                               AND = 3'b011,
+                               NOT = 3'b100,
+                               SUB = 3'b101;
     
     // Criei a lógica para cada flag
     // Flag Z só fica alta quando todos os bits
@@ -32,7 +32,7 @@ module ula #(
     always @(*) begin
         result = {WIDTH_DATA{1'b0}};
         case (sel)
-            LDA:     begin result = x; end
+            LDA:     begin result = y; end
             ADD:     begin result = x + y; end
             OR:      begin result = x | y; end
             AND:     begin result = x & y; end
