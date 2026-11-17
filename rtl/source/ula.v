@@ -5,7 +5,7 @@ module ula #(
         input wire  [WIDTH_SEL-1:0]  sel,
         input wire  [WIDTH_DATA-1:0] x,
         input wire  [WIDTH_DATA-1:0] y,
-        output reg [WIDTH_DATA-1:0] result,
+        output reg  [WIDTH_DATA-1:0] result,
         output wire                  n_flag,
         output wire                  z_flag
     );
