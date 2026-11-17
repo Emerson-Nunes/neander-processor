@@ -29,7 +29,7 @@ module decode #(
                               JMP = 4'b1000,
                               JN  = 4'b1001,
                               JZ  = 4'b1010,
-                              HLT = 4'b1011;
+                              HLT = 4'b1111;
 
     // Decodificação do bit de saída
     // de cada instrução, de forma combinacional
