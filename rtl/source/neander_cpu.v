@@ -31,34 +31,34 @@ module neander_cpu #(
          load_rdm, rd_mem, wr_mem,
          load_ac, load_nz, load_pc,
          halt_flag, sel_mpx;
-    wire [WIDTH_ULA-1:0]  sel_ula;
+         
     wire [WIDTH_TIME-1:0] time_step;
-    wire n_q, z_q;
-    wire [WIDTH_DATA-1:0] ula_result;
+    wire n_out, z_out;
     wire n_ula, z_ula;
-    assign mem_din = 8'd0;
+    wire [WIDTH_ULA-1:0]  sel_ula;
+    wire [WIDTH_DATA-1:0] ula_result;
 
     // Instanciando os módulos
     pc_reg #(
         .WIDTH_DATA(WIDTH_DATA)
     ) p_reg_dut (
         .clk(clk), .rst(rst), .inc(inc_pc),
-        .load(load_pc), .data_in(mpx_out),
-        .data_out(mem_addr)
+        .load(load_pc), .data_in(mem_dout),
+        .data_out(pc_out)
     );
 
     rem_reg #(
         .WIDTH_DATA(WIDTH_DATA)
     ) rem_reg_dut (
-        .clk(clk), .rst(rst), .load(load_pc),
-        .data_in(mem_dout), .data_out(pc_q)
+        .clk(clk), .rst(rst), .load(load_rem),
+        .data_in(mpx_out), .data_out(mem_addr)
     );
 
     ri_reg #(
         .WIDTH_DATA(WIDTH_DATA)
     ) ri_reg_dut (
-        .clk(clk), .rst(rst), .load(load_pc),
-        .data_in(mem_dout), .data_out(pc_q)
+        .clk(clk), .rst(rst), .load(load_ri),
+        .data_in(mem_dout), .data_out(ri_out)
     );
 
     rdm_reg #(
@@ -68,13 +68,21 @@ module neander_cpu #(
         .data_in(ac_out), .data_out(mem_din)
     );
 
+    mpx #(
+        .WIDTH_DATA(WIDTH_DATA)
+    ) mpx_dut (
+        .s1(sel_mpx), .pc_out(pc_out), .rdm_out(mem_dout),
+        .data_out(mpx_out)
+    );
+
     decode #(
         .WIDTH_OP(WIDTH_OP)
     ) decode_dut (
-        .opcode(ri_out[WIDTH_OP+3:WIDTH_OP]), .nop(nop),
-        .sta(sta), .lda(lda), .add(add), .orr(orr),
-        .andd(andd), .nott(nott), .sub(sub),
-        .jmp(jmp), .jn(jn), .jz(jz), .hlt(hlt)
+        .opcode(ri_out[WIDTH_DATA-1:WIDTH_DATA-WIDTH_OP]),
+        .nop(nop), .sta(sta), .lda(lda),
+        .add(add), .orr(orr), .andd(andd),
+        .nott(nott), .sub(sub), .jmp(jmp),
+        .jn(jn), .jz(jz), .hlt(hlt)
     );
 
     ula #(
@@ -94,14 +102,14 @@ module neander_cpu #(
     nz_reg nz_reg_dut (
         .clk(clk), .rst(rst), .load(load_nz),
         .n_in(n_ula), .z_in(z_ula),
-        .n_out(n_q), .z_out(z_q)
+        .n_out(n_out), .z_out(z_out)
     );
 
     unidade_controle #(
         .WIDTH_ULA(WIDTH_ULA), .WIDTH_TIME(WIDTH_TIME)
     ) unidade_controle_dut (
         .clk(clk), .rst(rst),
-        .n_in(n_q), .z_in(z_q),
+        .n_in(n_out), .z_in(z_out),
         .nop(nop), .sta(sta), .lda(lda), .add(add),
         .orr(orr), .andd(andd), .nott(nott), .sub(sub),
         .jmp(jmp), .jn(jn), .jz(jz), .hlt(hlt),
